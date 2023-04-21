@@ -25,6 +25,12 @@ jobs:
         with:
           version: nightly
 
+      - name: Generate remappings
+        run: |
+          forge remappings > remappings.txt
+          echo 'src/=src/' >> remappings.txt
+          forge remappings
+
       - name: Run Forge build
         run: |
           forge --version
