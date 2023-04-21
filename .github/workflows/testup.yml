@@ -16,12 +16,12 @@ jobs:
         
       - name: Generate remappings
         run: |
-          forge remappings
           forge remappings > remappings.txt
-          echo 'src/=/app/src/' >> remappings.txt
+          echo 'src/=/src/' >> remappings.txt
+          forge remappings
 
       - name: Run tests
-        run: forge test -vvv
+        run: forge test -vvvv
 
       - name: Run snapshot
         run: forge snapshot
