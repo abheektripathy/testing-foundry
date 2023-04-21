@@ -13,6 +13,9 @@ jobs:
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
+        
+      - name: Generate remappings
+        run: forge remappings > remappings.txt
 
       - name: Run tests
         run: forge test -vvv
