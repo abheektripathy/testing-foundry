@@ -1,6 +1,6 @@
 name: test
 
-on: workflow_dispatch
+on: push
 
 env:
   FOUNDRY_PROFILE: ci
@@ -8,10 +8,13 @@ env:
 jobs:
   check:
     strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
       fail-fast: true
 
     name: Foundry project
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v3
         with:
