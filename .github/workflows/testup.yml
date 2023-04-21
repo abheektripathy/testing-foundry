@@ -15,10 +15,14 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         
       - name: Generate remappings
-        run: forge remappings > remappings.txt
+        run: |
+          forge remappings
+          forge remappings > remappings.txt
+          echo 'src/=/app/src/' >> remappings.txt
 
       - name: Run tests
         run: forge test -vvv
 
       - name: Run snapshot
         run: forge snapshot
+
