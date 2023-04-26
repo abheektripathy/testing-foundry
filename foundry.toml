@@ -7,7 +7,7 @@ sender = '0xAB679Bd9e665C7C58D1D3C19C2012b29B83f88d9'
 [rpc_endpoints]
 goerli = "${GOERLI_RPC_URL}"
 
-[infura]
+[profile.infura]
 goerli = { key = "${INFURA_API_KEY}" }
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
